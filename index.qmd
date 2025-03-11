@@ -1,0 +1,3 @@
+# Preface {.unnumbered}
+
+This book is specially for the undergrad students of Business and Economics program providing basic to advance statistical tools and techniques to handle data .
