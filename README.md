@@ -1,1 +1,1 @@
-"# stat_for_businessNeconomics" 
+This book is specially for undergrad students of the Business and Economics program. It provides basic to advanced statistical tools and techniques for handling data. Please visit the link https://saifuddin86.quarto.pub/statistics-for-business-and-economics/  to read the book.
