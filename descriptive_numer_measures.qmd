@@ -299,7 +299,7 @@ sal6d %>% mutate(m=mean(sal6),deviation=sal6-m,squared_deviation=deviation^2)->v
 ```
 
 | Salary ($x_i$) | Sample mean, $\bar x$ | $(x_i-\bar x)$ | $(x_i-\bar x)^2$ |
-|:--:|:--:|:--:|:--:|
+|:----------------:|:----------------:|:----------------:|:----------------:|
 | 3450 | 3505 | -55 | 3025 |
 | 3550 | 3505 | 45 | 2025 |
 | 3650 | 3505 | 145 | 21025 |
@@ -484,7 +484,7 @@ Eventually the **standard deviation** is $\sqrt {s^2}$
 [*Solution:*]{.underline}
 
 |  |  |  |  |  |
-|----|:--:|:--:|:--:|:--:|
+|---------------|:-------------:|:-------------:|:-------------:|:-------------:|
 | **Audit Time (days)** | **Mid point**$(M_i)$ | **Frequency** $(f_i)$ | $f_i M_i$ | $f_i M_i^2$ |
 | 10-14 | 12 | 4 | 48 | 576 |
 | 15-19 | 17 | 8 | 136 | 2312 |
@@ -616,7 +616,7 @@ Sometimes a data set will have one or more observations with unusually large or 
 
 An observation say $x_i$ is treated as *outlier* if its corresponding **z-score** is *less than -3* or *greater than +3*.
 
-**Equivalently**, if an observation $x_i$ falls outside the interval $[\bar x-z\cdot s,\bar x+z\cdot s]$.
+**Equivalently**, if an observation $x_i$ falls outside the interval $[\bar x-3\cdot s,\bar x+3\cdot s]$.
 :::
 
 ::: callout-note
@@ -810,7 +810,104 @@ These three types of kurtosis are illustrated in @fig-kurtosis.
 
 ![Different types of kurtosis](Kurtosis.png){#fig-kurtosis width="416"}
 
-### Measures of skewness and kurtosis
+### Measures of skewness and kurtosis using Moments
+
+**Moments:**
+
+Suppose a sample of size $n$ of variable $X$ with observations $x_1,x_2,....,x_n$.
+
+The$r^{th}$sample **raw moment is**
+
+$$
+m'_{r}=\frac{\sum_{i=1}^{n} x_i^r}{n}
+$$ {#eq-rawm}
+
+Hence the first 4 raw moments are:
+
+$m'_1=\frac{\sum_{i=i}^n x_i}{n}=\bar x$
+
+$m'_2=\frac{\sum_{i=i}^n x_i^2}{n}$
+
+$m'_3=\frac{\sum_{i=i}^n x_i^3}{n}$
+
+$m'_4=\frac{\sum_{i=i}^n x_i^4}{n}$
+
+The$r^{th}$sample **central moment (about mean) is:**
+
+$$
+m_r=\frac{\sum_{i=1}^n (x_i-\bar x)^r}{n}
+$$ {#eq-centralm}
+
+Hence the first 4 central moments are:
+
+$m_1=\frac{\sum(x-\bar x)}{n}=\frac{0}{n}=0$
+
+$m_2=\frac{\sum(x-\bar x)^2}{n}$
+
+$m_3=\frac{\sum(x-\bar x)^3}{n}$
+
+$m_4=\frac{\sum(x-\bar x)^4}{n}$
+
+**Relation between raw moments and central moments**
+
+a\) $m_1=0$
+
+b\) $m_2=m'_2-{m'_1}^2$
+
+c\) $m_3=m'_3-3m'_1 m'_2+2{m'_1}^3$
+
+d\) $m_4=m'_4-4m'_1 m'_3+6{m'_1}^2 m'_2-3{m'_1}^4$
+
+**Example**
+
+**Calculate** the first 4 central moments from the following sample data.
+
+`3,5,6,9,12`
+
+[Solution:]{.underline}
+
+```{r}
+
+moments<-function(x,r){
+  x_bar=mean(x)
+  n=length(x)
+  mr=numeric(r)
+  for (i in 1:r) {
+    mr[i]=sum((x-x_bar)^i)/n
+    #print(mr[i])
+  }
+  return(mr)
+}
+
+x=c(3,5,6,9,12)
+
+#moments(x,4)
+
+
+```
+
+Here sample mean, $\bar x=\frac{\sum x}{n}=\frac{3+5+...+12}{5}=7$
+
+| $x$ | $(x-\bar x)$ | $(x-\bar x)^2$ | $(x-\bar x)^3$ | $(x-\bar x)^4$ |
+|:-------------:|:-------------:|:-------------:|:-------------:|:-------------:|
+| 3 | -4 | 16 | -64 | 256 |
+| 5 | -2 | 4 | -8 | 16 |
+| 6 | -1 | 1 | -1 | 1 |
+| 9 | 2 | 4 | 8 | 16 |
+| 12 | 5 | 25 | 125 | 625 |
+| $\sum x=35$ | $\sum (x-\bar x)=0$ | $\sum(x-\bar x)^2=50$ | $\sum(x-\bar x)^3=60$ | $\sum (x-\bar x)^4=914$ |
+
+The central moments are:
+
+$m_1=0$
+
+$m_2=\frac{50}{5}=10$
+
+$m_3=\frac{60}{5}=12$
+
+$m_4=\frac{914}{5}=182.8$
+
+**Coefficient of skewness and kurtosis**
 
 Let we have a sample data $X=\{x_1,x_2,...,x_n\}$ from a population. The following formulas are used to measure skewness and kurtosis from a sample data [@newbold2013].
 
