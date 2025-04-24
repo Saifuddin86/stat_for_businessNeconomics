@@ -13,17 +13,18 @@ book:
 
   chapters:
     - index.qmd
-    - intro.qmd
-    - descriptive_graph_tab.qmd
-    - descriptive_numer_measures.qmd
-    - Probability.qmd
-    - randomvariable_and_discrete probability dist.qmd
-    - continuous_r.v.qmd
-    - Further_topics_on_rv.qmd
-    - sampling_and_sampling_distributions.qmd
-    - estimation.qmd
-    - hypothesis_test.qmd
-    - Correlation.qmd
+    - 1intro.qmd
+    - 2descriptive_graph_tab.qmd
+    - 3descriptive_numer_measures.qmd
+    - 4Probability.qmd
+    - 5randomvariable_and_discrete probability dist.qmd
+    - 6continuous_r.v.qmd
+    - 7Further_topics_on_rv.qmd
+    - 8sampling_and_sampling_distributions.qmd
+    - 9estimation.qmd
+    - 10hypothesis_test.qmd
+    - 11Hypotheis_test(TWO population).qmd
+    - 14Correlation.qmd
     #- Multiple_linear.qmd
     - summary.qmd
     - references.qmd

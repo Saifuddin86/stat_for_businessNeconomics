@@ -196,16 +196,16 @@ Where,
 
 -    $\bar x$: the **sample mean**
 
--    $a_i$​ : constants calculated based on the **expected values and variances** of order statistics from a **standard normal distribution (**Tabulated in Shapiro Wilk Table)
+-    $a_i$ : constants calculated based on the **expected values and variances** of order statistics from a **standard normal distribution (**Tabulated in Shapiro Wilk Table)
 
 -   $n$: sample size
 
 
 **Hypotheses:**
 
--    **Null Hypothesis** $H_0$​: The data are **normally distributed**.
+-    **Null Hypothesis** $H_0$: The data are **normally distributed**.
 
--   **Alternative** $H_1$​: The data are **not normally distributed**.
+-   **Alternative** $H_1$: The data are **not normally distributed**.
 
 We reject $H_0$ if the **p-value** is less than our significance level (e.g., 0.05).
 
@@ -214,10 +214,19 @@ Almost all statistical software and package routinely provide the **Shapiro-Wilk
 In **R** Shapiro-Wilk test is available as `shapiro.test` .
 
 ```{r}
+set.seed(313)
 uniform.data<-runif(100,2,4)
-normal.data<-rnorm(100,5,1.5)
-
 shapiro.test(uniform.data)
 
+```
+
+The p-value<0.05 implies (reject $H_0$) that the data is not normally distributed. 
+
+
+```{r}
+set.seed(313)
+normal.data<-rnorm(100,5,1.5)
 shapiro.test(normal.data) 
 ```
+
+The p-value>0.05 implies (do not reject $H_0$) that the data is  normally distributed. 
