@@ -16,21 +16,21 @@ In previous chapter we discuss the sampling properties of the sample mean and va
 
 -   The numerical value obtained for , is called the **point estimate**.
 
-+-------------------------------+----------+---------------------------------------------------------------------------------------+
-| Population parameter          | Symbol   | Point estimator                                                                       |
-+===============================+:========:+:=====================================================================================:+
-| Population mean               | $\mu$    | Sample mean,                                                                          |
-|                               |          |                                                                                       |
-|                               |          | $\bar x=\frac{\sum x}{n}$                                                             |
-+-------------------------------+----------+---------------------------------------------------------------------------------------+
-| Population standard deviation | $\sigma$ | Sample standard deviation,                                                            |
-|                               |          |                                                                                       |
-|                               |          | $s=\sqrt{\frac{\sum(x-\bar x)^2}{n-1}}=\sqrt {\frac{\sum x^2 -n\cdot \bar x^2}{n-1}}$ |
-+-------------------------------+----------+---------------------------------------------------------------------------------------+
-| Population proportion         | $p$      | Sample proportion,                                                                    |
-|                               |          |                                                                                       |
-|                               |          | $\hat p=\frac{\# \ \ of \ \  outcomes\ \ of  \ \ interest }{n}$                       |
-+-------------------------------+----------+---------------------------------------------------------------------------------------+
++-------------------------------+------------+---------------------------------------------------------------------------------------+
+| Population parameter          | Symbol     | Point estimator                                                                       |
++===============================+:==========:+:=====================================================================================:+
+| Population mean               | $\mu$      | Sample mean,                                                                          |
+|                               |            |                                                                                       |
+|                               |            | $\bar x=\frac{\sum x}{n}$                                                             |
++-------------------------------+------------+---------------------------------------------------------------------------------------+
+| Population standard deviation | $\sigma$   | Sample standard deviation,                                                            |
+|                               |            |                                                                                       |
+|                               |            | $s=\sqrt{\frac{\sum(x-\bar x)^2}{n-1}}=\sqrt {\frac{\sum x^2 -n\cdot \bar x^2}{n-1}}$ |
++-------------------------------+------------+---------------------------------------------------------------------------------------+
+| Population proportion         | $p$        | Sample proportion,                                                                    |
+|                               |            |                                                                                       |
+|                               |            | $\hat p=\frac{\# \ \ of \ \  outcomes\ \ of  \ \ interest }{n}$                       |
++-------------------------------+------------+---------------------------------------------------------------------------------------+
 
 : Some common population parameters and their estimators {#tbl-tab9.1}
 
@@ -402,7 +402,7 @@ Here, $t_{\alpha/2}$ is the $t$ value providing an area of $\alpha/2$ in the upp
 
 Assuming that the population is normally distributed find the 99% confidence interval for the population mean of time it takes to drive to work.
 
-### Interval estimation for population proportion : Large sample
+### Interval estimation for a population proportion : Large sample
 
 From previous chapter we know if $np$ and $np(1-p)$ is equal or greater than $5$ then the sample proportion $\hat p$ will approximately follow **normal distribution** with **mean** $p$ and **variance** $\frac{p(1-p)}{n}$.
 
@@ -426,4 +426,4 @@ which is valid provided that $n\hat p$ and $n(1 - \hat p)$ are greater than 5.
 
 **Problem 9.10** [@newbold2013, page 305] From a random sample of 400 registered voters in one city, 320 indicated that they would vote in favor of a proposed policy in an upcoming election. Find a 98% confidence interval for the population proportion in favor of this policy.
 
-\
+##  Interval estimation: Comparing TWO populations
